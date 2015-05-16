@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+    id="IntelliInvest" version="2.5">
+
+  <display-name>IntelliInvestV2</display-name>
+  
+  <filter>
+	    <filter-name>intelliinvestFilter</filter-name>
+	    <filter-class>com.intelliinvest.filter.IntelliInvestFilter</filter-class>
+  </filter>
+	
+  <filter-mapping>
+	    <filter-name>intelliinvestFilter</filter-name>
+	    <url-pattern>/</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+		<filter-name>gzipFilter</filter-name>
+		<filter-class>com.intelliinvest.filter.GZipFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>gzipFilter</filter-name>
+   		<url-pattern>*.js</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+    	<filter-name>gzipFilter</filter-name>
+    	<url-pattern>*.css</url-pattern>
+  </filter-mapping>
+  
+  <servlet>
+        <servlet-name>IntelliInvestStaticServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>IntelliInvestStaticServlet</servlet-name>
+        <url-pattern>/js/*</url-pattern>
+        <url-pattern>/css/*</url-pattern>
+        <url-pattern>/images/*</url-pattern>
+        <url-pattern>/fonts/*</url-pattern>
+    </servlet-mapping>
+    
+  <servlet>
+        <servlet-name>IntelliInvestServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+        <servlet-name>IntelliInvestServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/root-context.xml</param-value>
+    </context-param>
+ 
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+</web-app>

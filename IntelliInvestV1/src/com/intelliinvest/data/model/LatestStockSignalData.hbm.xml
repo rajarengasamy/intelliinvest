@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.intelliinvest.data.model">
+
+    <class name="LatestStockSignalData">
+    	<composite-id>
+      		<key-property name="code" column="code"/>
+      		<key-property name="signalDate" column="signalDate"/>
+    	</composite-id> 
+    	<property name="signalPrice" column="signalPrice"/>
+    	<property name="signalType" column="signalType"/>
+    </class>
+    
+</hibernate-mapping>

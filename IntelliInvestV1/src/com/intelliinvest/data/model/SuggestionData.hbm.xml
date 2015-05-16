@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.intelliinvest.data.model">
+
+    <class name="SuggestionData">
+   		<composite-id>
+      		<key-property name="code" column="code"/>
+      		<key-property name="suggestionType" column="suggestionType"/>
+    	</composite-id> 
+    	<property name="signalType" column="signalType"/>
+    	<property name="signalPrice" column="signalPrice"/>
+    	<property name="signalDate" column="signalDate"/>
+    	<property name="stopLossPrice" column="stopLossPrice"/>
+    </class>
+    
+</hibernate-mapping>
