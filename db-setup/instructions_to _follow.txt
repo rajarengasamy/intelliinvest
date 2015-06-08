@@ -1,0 +1,21 @@
+go to mysql bin directory:
+
+mysql -u root -p
+default password is zero length string
+
+CREATE DATABASE IntelliInvest;
+
+after that exit out from mysql prompt but not from bin directory
+execute following commands:
+
+mysql -uroot IntelliInvest < G:\intelliinvest\db\SQL-DDLs\INTELLI_INVEST_DATA.sql
+mysql -uroot IntelliInvest < G:\intelliinvest\db\SQL-DDLs\intellii_qa.sql
+mysql -uroot IntelliInvest < G:\intelliinvest\db\SQL-DDLs\MANAGE_PORTFOLIO_DETAILS.sql
+mysql -uroot IntelliInvest < G:\intelliinvest\db\SQL-DDLs\NIFTY_STOCKS.sql
+mysql -uroot IntelliInvest < G:\intelliinvest\db\SQL-DDLs\NSE_TO_BSE_MAP.sql
+mysql -uroot IntelliInvest < G:\intelliinvest\db\SQL-DDLs\PAYMENT_DETAILS.sql
+mysql -uroot IntelliInvest < G:\intelliinvest\db\SQL-DDLs\RISK_RETURN_MATRIX.sql
+mysql -uroot IntelliInvest < G:\intelliinvest\db\SQL-DDLs\stock_details.sql
+mysql -uroot IntelliInvest < G:\intelliinvest\db\SQL-DDLs\CURRENT_STOCK_PRICE.sql
+mysql -uroot IntelliInvest < G:\intelliinvest\db\SQL-DDLs\KEY_STORE.sql
+mysql -uroot IntelliInvest < G:\intelliinvest\db\SQL-DDLs\IntelliInvest.sql
